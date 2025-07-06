@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Lala Queen Beauty</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      margin-top: 15px;
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #0077b6;
+      font-weight: bold;
+    }
+    section {
+      margin-top: 20px;
+    }
+    .product-detail {
+      margin-top: 15px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lala Queen Beauty</h1>
+  </header>
+
+  <nav>
+    <a href="#profil">Profil Kami</a>
+    <a href="#produk">Detail Produk</a>
+  </nav>
+
+  <section id="profil">
+    <h2>Profil Kami</h2>
+    <p>Kami menjual produk perawatan kulit berkualitas tinggi untuk kesehatan dan kecantikan Anda.</p>
+  </section>
+
+  <section id="produk">
+    <h2>Detail Produk</h2>
+    <label for="produkSelect">Pilih Produk:</label>
+    <select id="produkSelect" onchange="tampilkanProduk()">
+      <option value="">-- Pilih Produk --</option>
+      <option value="produk1">Face & Body Brightening Serum (Superplan)</option>
+      <option value="produk2">Sabun Transparan Collagen Premium (ZUKHA)</option>
+    </select>
+
+    <div id="produk1" class="product-detail">
+      <h3>Face & Body Brightening Serum</h3>
+      <p><strong>Merk:</strong> Superplan</p>
+      <p>Serum pencerah wajah dan tubuh yang membantu mencerahkan kulit, melembabkan, dan membuat kulit tampak lebih sehat.</p>
+    </div>
+
+    <div id="produk2" class="product-detail">
+      <h3>Sabun Transparan Collagen Premium</h3>
+      <p><strong>Merk:</strong> ZUKHA</p>
+      <p>Sabun transparan yang mengandung collagen untuk membantu meremajakan kulit dan menjaga kelembapan alami.</p>
+    </div>
+  </section>
+
+  <script>
+    function tampilkanProduk() {
+      const select = document.getElementById('produkSelect');
+      const produk1 = document.getElementById('produk1');
+      const produk2 = document.getElementById('produk2');
+
+      // Sembunyikan semua detail produk terlebih dahulu
+      produk1.style.display = 'none';
+      produk2.style.display = 'none';
+
+      // Tampilkan produk yang dipilih
+      if (select.value === 'produk1') {
+        produk1.style.display = 'block';
+      } else if (select.value === 'produk2') {
+        produk2.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
